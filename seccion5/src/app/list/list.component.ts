@@ -8,14 +8,14 @@ import { Component, OnInit , Input , Output, EventEmitter} from '@angular/core';
 export class ListComponent implements OnInit {
 
   @Input() personajes ;
-  @Output() sideElejido = new EventEmitter<{name: string, side: string}>();
+  // @Output() sideElejido = new EventEmitter<{name: string, side: string}>();
 
   constructor() { }
 
   ngOnInit() {}
 
-  onSelectedSide(charInfo) {
-    this.sideElejido.emit(charInfo);
-  }
+  // onSelectedSide(charInfo) {
+  //   this.sideElejido.emit(charInfo);
+  // }
 
 }
