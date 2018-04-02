@@ -46,4 +46,19 @@ form.value-> si no tiene porpiedad name="" da el fallo famoso.
  al add required>
  el formulario accede al formControl ngValid
 
- 
+ ##validaciones al form se le aññade las clases por ngForm
+ class="ng-untouched ng-pristine ng-invalid"
+ every 
+ input.ng-invalid{
+    border: solid red;
+} asi se le pasa porque la clase ya la cambia ngForm al pasar a valid
+input.ng-invalid.ng-touched{--xsolo cuando se accede al ibnput-->
+
+###error mess crear una variable del DOM con #
+#nameCtrl="ngModel" y si se asigna a ngMOdel esa variable tiene acceso s todo el FormContrl object   y
+se puede acceder al control  *ngIf="nameCtrl.invalid"
+
+#disable boton
+ngModel es realmente una directiva que permite a cceder a los FomrControlers, pero que opcionalmente 
+se pude utilizar como [(ngModel)] 2 vaw Bindings-> y ademas como atributo [ngModel]. pero su uso es para
+dar acceso a los objetos del FormControl-
