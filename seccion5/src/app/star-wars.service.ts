@@ -33,4 +33,17 @@ export class StarWarsService {
     this.logService.writeLog('cambio de LADO ' + info.name + ' lado: ' + info.side);
   }
 
+  addPersonaje(nombre, lado) {
+// valuida si es vacio
+    const pos = this.characters.findIndex((per) => {
+      return per.name === nombre;
+    });
+
+    if (pos !== -1) {
+      return;
+    }
+    const newChar = {name: nombre, side: lado};
+    this.characters.push(newChar);
+  }
+
 }

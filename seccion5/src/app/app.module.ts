@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -10,16 +11,19 @@ import { ItemComponent } from './item/item.component';
 // service
 import { StarWarsService } from './star-wars.service';
 import { LogService } from './log.service';
+import { CreateCaracterComponent } from './create-caracter/create-caracter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabsComponent,
     ListComponent,
-    ItemComponent
+    ItemComponent,
+    CreateCaracterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [StarWarsService, LogService],
   bootstrap: [AppComponent]
