@@ -75,3 +75,20 @@ el form se crea en el ts.controller y se sincronoza con el template
 da mas control sobre el form desde el propio Form.->
 #########-----------#######################
 
+# routes..
+se import ael modulo 
+import { RouterModule } from '@angular/router';
+y se declara en los modulos impport
+ imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(rutes)
+  ],
+  forChild es para lazy loads. 
+  ##luego hay que indicarle a angular donde debe renderizar los componente de cada ruta por medio de ...
+   <router-outlet></router-outlet>
+   #--aqui se le dice donde renderiza los comps.
+
+##IMPORTANTE cuando se pasa un atributo [routerLik]="''" se debe pasar aqui-->
+
+ routerLinkActive="active" es una directicva que indica que classe CSS
