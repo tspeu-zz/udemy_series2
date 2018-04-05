@@ -58,7 +58,20 @@ input.ng-invalid.ng-touched{--xsolo cuando se accede al ibnput-->
 #nameCtrl="ngModel" y si se asigna a ngMOdel esa variable tiene acceso s todo el FormContrl object   y
 se puede acceder al control  *ngIf="nameCtrl.invalid"
 
-#disable boton
+#disable boton #form la varible del DOM qque equivale al ngForm
+[disabled]="form.invalid" o [disabled]="!form.valid"
+
+
+########### --- OJO--- NGMODEL ##########
 ngModel es realmente una directiva que permite a cceder a los FomrControlers, pero que opcionalmente 
 se pude utilizar como [(ngModel)] 2 vaw Bindings-> y ademas como atributo [ngModel]. pero su uso es para
 dar acceso a los objetos del FormControl-
+##########_____*****************************   template--FORMS
+#############################################################
+
+
+###### ----------------REACTIVE FORMS
+el form se crea en el ts.controller y se sincronoza con el template
+da mas control sobre el form desde el propio Form.->
+#########-----------#######################
+

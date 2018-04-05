@@ -12,6 +12,7 @@ import { ItemComponent } from './item/item.component';
 import { StarWarsService } from './star-wars.service';
 import { LogService } from './log.service';
 import { CreateCaracterComponent } from './create-caracter/create-caracter.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateCaracterComponent } from './create-caracter/create-caracter.compo
     TabsComponent,
     ListComponent,
     ItemComponent,
-    CreateCaracterComponent
+    CreateCaracterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
