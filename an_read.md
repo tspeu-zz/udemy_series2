@@ -115,3 +115,6 @@ sin embargo si se pasa directiva ="" acepta un String
 ########################################
 change detection    
 update UI cada vez que cambia->
+subscribe SUbject-->unsubscribe->
+
+#####http

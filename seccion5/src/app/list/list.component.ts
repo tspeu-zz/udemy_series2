@@ -1,4 +1,4 @@
-import { Component, OnInit , Input , Output, EventEmitter} from '@angular/core';
+import { Component, OnInit , Input , Output, EventEmitter, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StarWarsService } from '../star-wars.service';
 
@@ -7,7 +7,7 @@ import { StarWarsService } from '../star-wars.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy  {
 
   // @Input() personajes ;
   // @Output() sideElejido = new EventEmitter<{name: string, side: string}>();
@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
     activatedRoute: ActivatedRoute;
     swService: StarWarsService;
     guardarSide = 'all';
+    subscription;
 
   constructor(activatedRoute: ActivatedRoute,  swService: StarWarsService) {
     this.activatedRoute = activatedRoute;
@@ -31,14 +32,16 @@ export class ListComponent implements OnInit {
         console.log('ERRR', error);
       });
 
-      this.swService.charactersChanged.subscribe(
+      this.subscription = this.swService.charactersChanged.subscribe(
         () => {
           this.personajes = this.swService.getCharacters(this.guardarSide);
 
         }
       );
+  }
 
-
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   // onSelectedSide(charInfo) {
