@@ -89,6 +89,29 @@ y se declara en los modulos impport
    <router-outlet></router-outlet>
    #--aqui se le dice donde renderiza los comps.
 
-##IMPORTANTE cuando se pasa un atributo [routerLik]="''" se debe pasar aqui-->
+##IMPORTANTE-------------------- cuando se pasa un atributo [routerLik]="''" se debe pasar aqui-->----
+en un directiva [directiva]="''" acepta un string con '' pero puede aceptar un funcion  o un {onjeto:22}-
+sin embargo si se pasa directiva ="" acepta un String
+###----------------------------------------------------------------------------------------------------
 
- routerLinkActive="active" es una directicva que indica que classe CSS
+ # routerLinkActive="active" o
+ # [routerLinkActive] ="'active'"
+  es una directicva que indica que classe CSS
+ #[routerLinkActiveOptions]="{exact: true}" 
+ esto es porque por dsefecto entiende que la ruta / es la base y todas tiene esa ruta /ruta
+ así que se pone esa opcion de la directiva.
+
+ oara controlar los routes se usa como 
+ # ultimo elemnto del array ESTO ES IMPORTANTE DEBE SER EL ULTIMO
+  {path: '**', redirecTo: '/'} ** significa cualqueir ruta->
+  se puede usar childRoutes para el tab component
+  al añadir el router-oultet hay que añadir el routerLink que se hara cargo de cargar la clase css
+  y se debe configurar lo rutes child con
+    {path: '', redirectTo: 'all', pathMatch: 'full'},
+    cuando se a '' redirele a all-> ademas el pathMatch full es para que se refiera solo al path del 
+    child¿?¿?
+
+
+########################################
+change detection    
+update UI cada vez que cambia->

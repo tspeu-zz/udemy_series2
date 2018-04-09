@@ -15,8 +15,12 @@ import { CreateCaracterComponent } from './create-caracter/create-caracter.compo
 import { HeaderComponent } from './header/header.component';
 
 const rutes = [
-  {path: '', component: TabsComponent},
-  {path: 'new-character', component: CreateCaracterComponent}
+  {path: 'characters', component: TabsComponent, children: [
+    {path: '', redirectTo: 'all', pathMatch: 'full'},
+    {path: ':side', component: ListComponent}
+  ]},
+  {path: 'new-character', component: CreateCaracterComponent},
+  {path: '**', redirectTo: '/characters'}
 ];
 
 @NgModule({
