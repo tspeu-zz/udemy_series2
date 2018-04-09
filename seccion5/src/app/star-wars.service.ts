@@ -1,5 +1,7 @@
 import { LogService } from './log.service';
 import { Injectable } from '@angular/core';
+import {  Http} from '@angular/http';
+
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()
@@ -13,9 +15,24 @@ export class StarWarsService {
 
     // usar Subjent en vez de EventEmitter
     charactersChanged = new Subject<void>();
+    http: Http;
+    url = 'https://swapi.co/api/';
+    datos = [];
+    // fro, Http
+    res: Response;
 
-    constructor(log: LogService) {
+    constructor(log: LogService, http: Http) {
         this.logService = log;
+        this.http = http;
+    }
+
+    // from htttp
+    fetchCharacters() {
+      this.http.get(this.url + 'people/').subscribe(
+        (res) => {
+        //  res = this.datos;
+        console.log('res', res);
+        });
     }
 
 // filtrar la lista de personajes si es Light/Dark
