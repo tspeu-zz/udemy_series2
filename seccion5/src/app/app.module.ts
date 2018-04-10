@@ -9,20 +9,15 @@ import { TabsComponent } from './tabs/tabs.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 
+// routes module
+import { AppRoutingModule } from './app-routing.module';
 // service
 import { StarWarsService } from './star-wars.service';
 import { LogService } from './log.service';
 import { CreateCaracterComponent } from './create-caracter/create-caracter.component';
 import { HeaderComponent } from './header/header.component';
-
-const rutes = [
-  {path: 'characters', component: TabsComponent, children: [
-    {path: '', redirectTo: 'all', pathMatch: 'full'},
-    {path: ':side', component: ListComponent}
-  ]},
-  {path: 'new-character', component: CreateCaracterComponent},
-  {path: '**', redirectTo: '/characters'}
-];
+// module
+import { CreateCaracterModule } from './create-caracter/create-carater.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +25,14 @@ const rutes = [
     TabsComponent,
     ListComponent,
     ItemComponent,
-    CreateCaracterComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(rutes),
-    HttpModule
+    AppRoutingModule,
+    HttpModule,
+    CreateCaracterModule
   ],
   providers: [StarWarsService, LogService],
   bootstrap: [AppComponent]

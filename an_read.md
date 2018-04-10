@@ -118,3 +118,53 @@ update UI cada vez que cambia->
 subscribe SUbject-->unsubscribe->
 
 #####http
+// Inside a method/ place where you want to send the request
+const myData = {description: 'Data I want to pass, could be any kind of data/ object'}
+this.http.post('https://my-api.com/endpoint', myData)
+    .map(
+        (response: Response) => {
+            // map() is totally optional, you just subscribe() without it!
+            return response.json(); // fetch the body of the response - this of course also works for post requests
+        }
+    )
+    .subscribe(
+        (transformedData: any) => {
+            // Use your response data here
+            console.log(transformedData);
+        }
+
+########### optimizar la app
+crear modulo de routes../*-> se import RoutesModule se configura 
+y !IMPORTANT hay que exportarlo ya que el RoutesMOdule está configurado
+y no es el mismo que el original . 
+@NgModule({
+    imports : [
+        RouterModule.forRoot(rutes)
+    ],
+    exports: [
+        RouterModule
+    ]
+})        
+es decir el RouterModule tienes las rutes y es el que se debe exportar a toda la app 
+en el appModule..
+######################
+split en features->lazyLoading
+import { BrowserModule } from '@angular/platform-browser';
+solo se debe impòrtar en el app.module porque es el bootstrap de la app
+
+#CommonModule se deve importar en los distintos modulos que se creen en la app
+porque dan accseso a las funcionalidades de manejo del DOM que está en BrowseModule
+
+##DEPLOY-prod->AOC aheadOnlineCompilation
+ng build --prod 
+
+#####en index.html
+  <base href="/">
+  es lo que dice donde está en el servidor es decir en donde se encuentra en el servidor
+  asi que se puede configurar desde el CLI
+  ng build --prod --base-href /nombreDelDirectorio/
+  en AWS 
+  s3->
+  solo es subir los fuiles y estar seguro de retornar tl index.html en caso de err  404
+  subir solo todos los files->
+  
