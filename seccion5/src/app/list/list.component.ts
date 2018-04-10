@@ -28,7 +28,7 @@ export class ListComponent implements OnInit, OnDestroy  {
 
   ngOnInit() {
 
-    this.swService.fetchCharacters();
+    // move to app.ts this.swService.fetchCharacters();
     console.log('this.dataLoad', this.dataLoad);
 
     // this.datos = this.swService.datos;
