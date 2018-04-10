@@ -9,10 +9,10 @@ import 'rxjs/add/operator/map';
 export class StarWarsService {
 
     private characters = [
-        {name: 'Luke TrotaCielos', side: ''},
-        {name : 'Dart Vader', side: ''}
+        {name: '', side: ''}
     ];
     private logService: LogService;
+    allLoaded = false;
 
     // usar Subjent en vez de EventEmitter
     charactersChanged = new Subject<void>();
@@ -44,6 +44,9 @@ export class StarWarsService {
         // console.log('service this.datos', this.datos);
         // console.log('JSON response', JSON.stringify(response));
         this.characters = data;
+        // para informar los cambios
+        this.charactersChanged.next();
+
         console.log('response  this.characters',  this.characters);
         });
 
