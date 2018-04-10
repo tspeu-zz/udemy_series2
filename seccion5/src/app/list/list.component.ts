@@ -17,6 +17,7 @@ export class ListComponent implements OnInit, OnDestroy  {
     swService: StarWarsService;
     guardarSide = 'all';
     subscription;
+    datos = [];
 
   constructor(activatedRoute: ActivatedRoute,  swService: StarWarsService) {
     this.activatedRoute = activatedRoute;
@@ -24,8 +25,9 @@ export class ListComponent implements OnInit, OnDestroy  {
   }
 
   ngOnInit() {
-
     this.swService.fetchCharacters();
+    // this.datos = this.swService.datos;
+    // console.log('this.datos->', this.datos);
 
     this.activatedRoute.params.subscribe(
       (params) => {
