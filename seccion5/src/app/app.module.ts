@@ -18,6 +18,7 @@ import { CreateCaracterComponent } from './create-caracter/create-caracter.compo
 import { HeaderComponent } from './header/header.component';
 // module
 import { CreateCaracterModule } from './create-caracter/create-carater.module';
+import { ItemselectDirective } from './directivas/itemselect.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateCaracterModule } from './create-caracter/create-carater.module';
     TabsComponent,
     ListComponent,
     ItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    ItemselectDirective
   ],
   imports: [
     BrowserModule,
