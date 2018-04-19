@@ -3,8 +3,15 @@
 }
 
 .title{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:darkgoldenrod; 
+    font-family: 'STJEDISE';
+    /* color:red;  */
     font-size: 34px;   
     padding: 10px;
+}
+
+a {
+
+
+    font-family: 'Starjedi';
+    
 }

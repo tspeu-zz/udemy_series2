@@ -1,4 +1,29 @@
+@font-face { font-family: "Starjedi"; src: url("./assets/fonts/Starjedi.ttf"); }
+@font-face{ font-family: "Starjhol"; src: url("./assets/fonts/Starjhol.ttf"); } ;
+@font-face{ font-family: "Starjout"; src: url("./assets/fonts/Starjout.ttf"); } ;
+@font-face{ font-family: "STJEDISE"; src: url("./assets/fonts/STJEDISE.ttf"); } ;
+
+/* @import '~roboto-fontface/css/roboto/roboto-fontface.css'; */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+/* @import url('./assets/fonts/Starjedi.ttf'); */
+
+body{
+    font-family: 'Starjedi';
+}
+
+
+button {
+
+
+    font-family: 'Starjedi';
+    
+}
+
+
+
+
 .starTitle{
-    background: black;
-    /* color: gold; */
-}/* You can add global styles to this file, and also import other style files */
+    /* background:  */
+    font-family: 'Starjedi';
+    /* color: chartreuse; */
+}

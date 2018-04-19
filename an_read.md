@@ -1,4 +1,31 @@
+#####https://coursetro.com/posts/code/112/Angular-5-Deployment---Deploy-your-Angular-App
+##DEPLU GIT PAGES->
+npm i -g angular-cli-ghpages
+
+ng build --prod --base-href="myURL"
+ng build --prod --base-href="/jmsw"
+https://github.com/tspeu/jmstwrs.git
+
+#######################
+para subir a GITPAGES--mal
+ng build --prod --base-href="https://YOURUSERNAME.github.io/REPO-NAME/"
+ng build --prod --base-href="https://tspeu.github.io/jmstwrs.git/"
+o 
+###########BIEN ASI---->
+ng build --prod --base-href="./"
+
+prueba 1 con->
+ng build --prod --base-href="https://tspeu.github.io/jmstwrs.git/"
+
+https://tspeu.github.io/jmstwrs/characters/all
+es así
+ng build --prod --base-href="./"
+######################
+ng g directive menuitem
+
 #Inputs-->
+
+
 si hay un property para pasa en una propiedad para Input
 import { Input } from '@angular/core';
 @Input()  name ="algo";
@@ -11,7 +38,7 @@ npm i --save bootstrap
 it a .angula-cli.json-> y add  
 # la ruta relativa al src folder
       "styles": [
-#        "../node_modules/bootstrao/dist/css/bootstrap.min.css",
+#        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css"
       ],
 
@@ -63,6 +90,7 @@ se puede acceder al control  *ngIf="nameCtrl.invalid"
 
 
 ########### --- OJO--- NGMODEL ##########
+importar FormsModule simepre que se va a usar NgModel
 ngModel es realmente una directiva que permite a cceder a los FomrControlers, pero que opcionalmente 
 se pude utilizar como [(ngModel)] 2 vaw Bindings-> y ademas como atributo [ngModel]. pero su uso es para
 dar acceso a los objetos del FormControl-
